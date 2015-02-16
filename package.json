@@ -1,0 +1,31 @@
+{
+  "name": "menus-generator",
+  "version": "0.7.0",
+  "description": "Generates HTML menus (ul based)",
+  "author": {
+    "name": "Andrey Sharapov",
+    "email": "an.sh.1@yandex.ru"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/an-sh/menus-generator.git"
+  },
+  "private": false,
+  "main": "lib/menus-generator.js",
+  "dependencies": {},
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "vows --spec tests/*.js"
+  },
+  "keywords": [],
+  "devDependencies": {
+    "vows": "~0.9.0",
+    "i18n": "~0.5.0",
+    "jade": "^1.8.0",
+    "jsdom": "^2.0.0",
+    "dom-compare": "0.2.0"
+  },
+  "license": "MIT"
+}
