@@ -46,7 +46,7 @@ vows.describe("Menu jade mixins")
     "Render" :  function() {
       var menu = new fg.Menu("TMenu", null, { "class" : "c1" },
                              [ "menu1" , "/url1" ]);
-      var menuDOMa = jsdom( menu.render(jade, null, {"TMenu-menu1--link::before" : "<span>element</span>", "TMenu-menu1--link::after" : "<span>element</span>"} ) );
+      var menuDOMa = jsdom( menu.render(jade, null, null, {"TMenu-menu1--link::before" : "<span>element</span>", "TMenu-menu1--link::after" : "<span>element</span>"} ) );
       var menuDOMe = jsdom('<ul id="TMenu" class="c1"><li id="TMenu-menu1"><span>element</span><a id="TMenu-menu1--link" href="/url1"><span id="TMenu-menu1--text">TMenu-menu1</span></a><span>element</span></li></ul>');
       result = compare(menuDOMa, menuDOMe);
       assert.isEmpty(result.getDifferences());
@@ -55,7 +55,7 @@ vows.describe("Menu jade mixins")
       var menu = new fg.Menu("TMenu", null, { "class" : "c1" },
                              [ "menu1" , "/url1" ]);
       var include = path.join(__dirname, "test.jade");
-      var menuDOMa = jsdom( menu.render(jade, null, {"TMenu-menu1--link::before" : [ "tst" ], "TMenu-menu1--link::after" : [ "tst" ]}, include ));
+      var menuDOMa = jsdom( menu.render(jade, null, null, {"TMenu-menu1--link::before" : [ "tst" ], "TMenu-menu1--link::after" : [ "tst" ]}, include ));
       var menuDOMe = jsdom('<ul id="TMenu" class="c1"><li id="TMenu-menu1"><span>element</span><a id="TMenu-menu1--link" href="/url1"><span id="TMenu-menu1--text">TMenu-menu1</span></a><span>element</span></li></ul>');
       result = compare(menuDOMa, menuDOMe);
       assert.isEmpty(result.getDifferences());
