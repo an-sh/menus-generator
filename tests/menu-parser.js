@@ -60,7 +60,7 @@ vows.describe("Menu definitions parser")
     },
     "Global translation IDs" : {
       topic: function() {
-        return new fg.Menu("TMenu", { noPrefix : true }, {"class" : "nav"},
+        return new fg.Menu("TMenu", { i18nNoPrefix : true }, {"class" : "nav"},
                            [ "menu1" , "/url1", {"class" : "main"},
                              [ "submenu1", "/url2", { "class": "submain"}]]);
       },
