@@ -25,12 +25,24 @@ vows.describe("Menu jade mixins")
   .addBatch({
     "Simple menu" : function() {
       var menu = (new fg.Menu("TMenu", null, null,
-                              [ "item1" , "/url1" ])).getContent();
+                              [ "item1" , "/url1" ],
+                              [ "item2" , null ],
+                              [ "item3" ])).getContent();
       var htmlE = '\
 <ul id="TMenu">\
   <li id="TMenu-item1">\
     <a id="TMenu-item1--link" href="/url1">\
       <span id="TMenu-item1--label">TMenu-item1</span>\
+    </a>\
+  </li>\
+  <li id="TMenu-item2">\
+    <a id="TMenu-item2--link">\
+      <span id="TMenu-item2--label">TMenu-item2</span>\
+    </a>\
+  </li>\
+  <li id="TMenu-item3">\
+    <a id="TMenu-item3--link">\
+      <span id="TMenu-item3--label">TMenu-item3</span>\
     </a>\
   </li>\
 </ul>';
