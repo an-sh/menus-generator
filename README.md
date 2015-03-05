@@ -4,6 +4,40 @@
 Menus generation designed in the same way as
 [Forms Generator](https://github.com/an-sh/forms-generator)
 
+
+# Description
+
+The main interface is `Menu` class, which creates menu
+definitions. These definitions could be directly rendered to HTML via
+`render` method. Or `getContent` method could be used to get an object
+suitable as an argument for Jade `Menu` mixin. In this case HTML will
+be rendered as a part of Jade template.
+
+___Note:___ Neither `i18n` nor `jade` are included in the production
+dependencies, but rather they are expected by some methods as
+arguments. `Jade` should be compatible with version `1.9.0` and `i18n`
+with version `0.5.0`.
+
+### Identifiers or IDs
+
+Each item should have an ID that is used for several purposes. All IDs
+should match `/^~?[a-zA-Z_][a-zA-Z0-9_]*$/` regular expression. `~`
+prefix is stripped from actual IDs.
+
+The first one is generating HTML ID attributes. All item IDs are
+prefixed with a menu ID. So generated HTML ID attributes will look
+like _`MenuID-ItemID`_. Single `-` is used as a nesting separator,
+`--` is used to separate ID suffixes for additional elements like
+links.
+
+The second one is generating translation labels for fields. By default
+translation IDs generation algorithm is the same as the HTML one, but
+using non-prefixed IDs is allowed. `nTP` function disables prefixing
+for a single ID. Prefixing ID with `~` is similar to using `nTP`
+function. Also menu class constructor options allow customisation of
+menu translation IDs generation. HTML ID attributes are not affected
+by any of these options.
+
 ### Items definitions
 
 - items = item-array | items
