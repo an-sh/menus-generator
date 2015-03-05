@@ -21,7 +21,7 @@ function compareHelper(htmlA, htmlE) {
   assert.isEmpty(result.getDifferences());
 }
 
-vows.describe("Menu jade mixins")
+vows.describe("Jade mixins")
   .addBatch({
     "Simple menu" : function() {
       var menu = (new fg.Menu("TMenu", null, null,

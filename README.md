@@ -7,7 +7,7 @@ Menus generation designed in the same way as
 ### Items definitions
 
 - items = item-array | items
-- item-array = __[__ ID , url , _[_ attributes , items _]_ __]__
+- item-array = __[__ ID , _[_ url , attributes , items _]_ __]__
 - ID = `/^~?[a-zA-Z_][a-zA-Z0-9_]*$/`
 - url = `string` | `null`
 - attributes = `attributes-object` | `null` | attributes-array

@@ -14,7 +14,7 @@ i18n.configure({
 });
 
 
-vows.describe("Translations")
+vows.describe("Translation")
   .addBatch({
     "Menu Expand" : {
       topic: function() {

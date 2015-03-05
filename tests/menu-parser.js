@@ -4,7 +4,7 @@ var vows = require("vows");
 var assert = require("assert");
 var fg = require(path.join(__dirname, '../lib/menus-generator.js'));
 
-vows.describe("Menu definitions parser")
+vows.describe("Definitions parser")
   .addBatch({
     "Simple menu" : {
       topic: function() {
