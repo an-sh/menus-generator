@@ -1,7 +1,7 @@
 {
   "name": "menus-generator",
   "version": "0.7.0",
-  "description": "Generates HTML menus (ul based)",
+  "description": "HTML menus (ul based)",
   "author": {
     "name": "Andrey Sharapov",
     "email": "an.sh.1@yandex.ru"
