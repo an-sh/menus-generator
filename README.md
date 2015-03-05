@@ -76,8 +76,10 @@ __Arguments:__
 - `ID` - `string` matching `/^~?[a-zA-Z_][a-zA-Z0-9_]*$/` regular
 expression, __or__ result of `nTP` function.
 - `options` - `object` with menu options __or__ `null`. ___Fields:___
-  - `i18nNoPrefix` - `boolean` option to turn off prefixes for translation
-IDs, `false` by default.
+  - `i18nNoPrefix` - `boolean` option to turn off prefixes for
+  translation IDs, `false` by default.
+  - `i18nMenuID` - `string` with a menu ID, overrides a default menu
+  ID in translations.
 - `attributes` - `object`  `null`.
 - `...items` - Rest arguments are interpreted as items definitions.
 

@@ -5,6 +5,7 @@
 - Attributes arrays.
 - Mixin arguments fixed.
 - Attributes extender added.
+- More translation ID generation options.
 
 ### v0.7.0 (2015/02/16)
 
