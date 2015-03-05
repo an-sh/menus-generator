@@ -54,7 +54,9 @@ user supplied `attrsExtender` function. It should return an
 
 # Example
 
-TODO
+Express 4 example application with pure-menu CSS style is in an
+`example` directory.
+
 
 
 

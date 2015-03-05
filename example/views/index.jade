@@ -1,0 +1,35 @@
+
+include ../../jade/mixins.jade
+
+
+extends layout
+block page
+  //- PureCSS menus general integration function.
+  -function pureIntegration(name, level, isSubmenu) {
+  -  if(name === "a") {
+  -    return { "class" : "pure-menu-link" };
+  -  } else if(name === "li" && isSubmenu) {
+  -    return { "class" : "pure-menu-item pure-menu-has-children pure-menu-allow-hover" };
+  -  } else if(name === "li") {
+  -    return { "class" : "pure-menu-item" };
+  -  } else if(name === "ul" && level > 0) {
+  -    return { "class" : "pure-menu-children" };
+  -  } else if(name === "ul") {
+  -    return { "class" : "custom-restricted-width pure-menu pure-menu-list" };
+  -  }
+  -}
+
+  //- Dynamic language menu styling based on locale value.
+  -var insertions = {};
+  -var selected = "langMenu-en::attributes";
+  -if(locale === "ru") selected = "langMenu-ru::attributes"
+  -insertions[selected] = { "class" : "pure-menu-selected" };
+
+  //- Add horizontal style to language menu.
+  -insertions["langMenu::attributes"] = { "class" : "pure-menu-horizontal" };
+
+  +Menu(langMenu, insertions, pureIntegration)
+
+  h2 #{__("Menu example")}
+
+  +Menu(exampleMenu, { "exampleMenu::attributes" : { "class" : "pure-menu-horizontal" } } , pureIntegration)

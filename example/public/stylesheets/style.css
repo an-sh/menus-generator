@@ -1,0 +1,14 @@
+html,
+body {
+  width: 600px;
+  margin: 0 auto;
+}
+
+body {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.custom-restricted-width {
+  display: inline-block;
+}
