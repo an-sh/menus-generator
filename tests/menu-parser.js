@@ -18,9 +18,6 @@ vows.describe("Menu definitions parser")
       "id" : function (menu) {
         assert.strictEqual(menu.skel.id, "TMenu");
       },
-      "url" : function (menu) {
-        assert.isNull(menu.skel.url);
-      },
       "attributes" : function (menu) {
         assert.strictEqual(menu.skel.attrs["class"], "nav");
       },
@@ -30,14 +27,14 @@ vows.describe("Menu definitions parser")
       "entry id" : function (menu) {
         assert.strictEqual(menu.skel[0].id, "TMenu-menu1");
       },
-      "entry url" : function (menu) {
-        assert.strictEqual(menu.skel[0].url, "/url1");
+      "entry href" : function (menu) {
+        assert.strictEqual(menu.skel[0].linkAttrs.href, "/url1");
       },
-      "entry content type" : function (menu) {
-        assert.isFunction(menu.skel[0].content);
+      "entry label type" : function (menu) {
+        assert.isFunction(menu.skel[0].label);
       },
-      "entry content value" : function (menu) {
-        assert.strictEqual(menu.skel[0].content().toString(), "TMenu-menu1");
+      "entry label value" : function (menu) {
+        assert.strictEqual(menu.skel[0].label().toString(), "TMenu-menu1");
       },
       "entry attributes" : function (menu) {
         assert.strictEqual(menu.skel[0].attrs["class"], "main");
@@ -48,14 +45,14 @@ vows.describe("Menu definitions parser")
       "submenu entry id" : function (menu) {
         assert.strictEqual(menu.skel[0][0].id, "TMenu-submenu1");
       },
-      "submenu entry url" : function (menu) {
-        assert.strictEqual(menu.skel[0][0].url, "/url2");
+      "submenu entry href" : function (menu) {
+        assert.strictEqual(menu.skel[0][0].linkAttrs.href, "/url2");
       },
-      "submenu entry content type" : function (menu) {
-        assert.isFunction(menu.skel[0][0].content);
+      "submenu entry label type" : function (menu) {
+        assert.isFunction(menu.skel[0][0].label);
       },
-      "submenu entry content value" : function (menu) {
-        assert.strictEqual(menu.skel[0][0].content().toString(), "TMenu-submenu1");
+      "submenu entry label value" : function (menu) {
+        assert.strictEqual(menu.skel[0][0].label().toString(), "TMenu-submenu1");
       },
       "submenu entry attributes" : function (menu) {
         assert.strictEqual(menu.skel[0][0].attrs["class"], "sub");
@@ -67,17 +64,17 @@ vows.describe("Menu definitions parser")
                            [ "menu1" , "/url1", {"class" : "main"},
                              [ "submenu1", "/url2", { "class": "submain"}]]);
       },
-      "entry content type" : function (menu) {
-        assert.isFunction(menu.skel[0].content);
+      "entry label type" : function (menu) {
+        assert.isFunction(menu.skel[0].label);
       },
-      "entry content value" : function (menu) {
-        assert.strictEqual(menu.skel[0].content(), "menu1");
+      "entry label value" : function (menu) {
+        assert.strictEqual(menu.skel[0].label(), "menu1");
       },
-      "submenu entry content type" : function (menu) {
-        assert.isFunction(menu.skel[0][0].content);
+      "submenu entry label type" : function (menu) {
+        assert.isFunction(menu.skel[0][0].label);
       },
-      "submenu entry content value" : function (menu) {
-        assert.strictEqual(menu.skel[0][0].content(), "submenu1");
+      "submenu entry label value" : function (menu) {
+        assert.strictEqual(menu.skel[0][0].label(), "submenu1");
       }
     },
     "Translation IDs escaping" : {
@@ -86,17 +83,17 @@ vows.describe("Menu definitions parser")
                            [ fg.nTP("menu1") , "/url1", {"class" : "main"},
                              [ fg.nTP("submenu1") , "/url2", { "class": "submain"}]]);
       },
-      "entry content type" : function (menu) {
-        assert.isFunction(menu.skel[0].content);
+      "entry label type" : function (menu) {
+        assert.isFunction(menu.skel[0].label);
       },
-      "entry content value" : function (menu) {
-        assert.strictEqual(menu.skel[0].content().toString(), "menu1");
+      "entry label value" : function (menu) {
+        assert.strictEqual(menu.skel[0].label().toString(), "menu1");
       },
-      "submenu entry content type" : function (menu) {
-        assert.isFunction(menu.skel[0][0].content);
+      "submenu entry label type" : function (menu) {
+        assert.isFunction(menu.skel[0][0].label);
       },
-      "submenu entry content value" : function (menu) {
-        assert.strictEqual(menu.skel[0][0].content().toString(), "submenu1");
+      "submenu entry label value" : function (menu) {
+        assert.strictEqual(menu.skel[0][0].label().toString(), "submenu1");
       }
     },
     "Complex menu" : {
@@ -123,13 +120,13 @@ vows.describe("Menu definitions parser")
         assert.strictEqual(menu.skel[2].id, "TMenu-menu3");
         assert.strictEqual(menu.skel[3].id, "TMenu-menu4");
       },
-      "content values" : function (menu) {
-        assert.strictEqual(menu.skel[0].content().toString(), "TMenu-menu1");
-        assert.strictEqual(menu.skel[1].content().toString(), "menu2");
-        assert.strictEqual(menu.skel[1][0].content().toString(), "TMenu-submenu1");
-        assert.strictEqual(menu.skel[1][1].content().toString(), "submenu2");
-        assert.strictEqual(menu.skel[2].content().toString(), "TMenu-menu3");
-        assert.strictEqual(menu.skel[3].content().toString(), "menu4");
+      "label values" : function (menu) {
+        assert.strictEqual(menu.skel[0].label().toString(), "TMenu-menu1");
+        assert.strictEqual(menu.skel[1].label().toString(), "menu2");
+        assert.strictEqual(menu.skel[1][0].label().toString(), "TMenu-submenu1");
+        assert.strictEqual(menu.skel[1][1].label().toString(), "submenu2");
+        assert.strictEqual(menu.skel[2].label().toString(), "TMenu-menu3");
+        assert.strictEqual(menu.skel[3].label().toString(), "menu4");
       },
     },
     "Errors checking" : {

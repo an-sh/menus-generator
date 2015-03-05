@@ -1,0 +1,6 @@
+include ../jade/mixins.jade
+
+mixin tst()
+  span element
+
++Menu(menu, {"TMenu-item1--link::before" : [ "tst" ], "TMenu-item1--link::after" : [ "tst" ] })

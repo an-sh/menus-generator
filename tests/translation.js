@@ -34,12 +34,12 @@ vows.describe("Translations")
         assert.strictEqual(exp[1].length, 2);
       },
       "content translation" : function (exp) {
-        assert.strictEqual(exp[0].content, "Menu1");
-        assert.strictEqual(exp[1].content, "Menu2");
-        assert.strictEqual(exp[1][0].content, "Submenu1");
-        assert.strictEqual(exp[1][1].content, "Submenu2");
-        assert.strictEqual(exp[2].content, "Menu3");
-        assert.strictEqual(exp[3].content, "Menu4");
+        assert.strictEqual(exp[0].label, "Menu1");
+        assert.strictEqual(exp[1].label, "Menu2");
+        assert.strictEqual(exp[1][0].label, "Submenu1");
+        assert.strictEqual(exp[1][1].label, "Submenu2");
+        assert.strictEqual(exp[2].label, "Menu3");
+        assert.strictEqual(exp[3].label, "Menu4");
       },
       "attributes" : function (exp) {
         assert.strictEqual(exp[1].attrs.name, "Name");
