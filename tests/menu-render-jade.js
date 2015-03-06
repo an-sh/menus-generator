@@ -187,7 +187,7 @@ vows.describe("Jade mixins")
           return {};
         }
       };
-      var html = menu.render(jade, {pretty : true}, null, { "attrsExtender" :  insfn } );
+      var html = menu.render(jade, {pretty : true, "attrsExtender" :  insfn } );
       var menuDOMa = jsdom(html);
       var menuDOMe = jsdom('\
 <ul id="TMenu">\
