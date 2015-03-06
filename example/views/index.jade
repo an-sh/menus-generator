@@ -33,3 +33,7 @@ block page
   h2 #{__("Menu example")}
 
   +Menu(exampleMenu, { "@::attributes" : { "class" : "pure-menu-horizontal" } } , pureIntegration)
+
+  h2 #{__("Menu example, alternative render")}
+
+  +Menu(exampleMenu, null , pureIntegration, "alt")

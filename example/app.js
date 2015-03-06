@@ -21,14 +21,14 @@ var langMenu = new mg.Menu(
 
 var exampleMenu = new mg.Menu(
   "exampleMenu", null, null,
-  [ "item1", "#" ],
-  [ "item2", "#" ],
-  [ "cat1", "#", null,
-    [ "item3", "#" ],
-    [ "item4", "#" ] ],
-  [ "cat2", "#", null,
-    [ "item5", "#" ],
-    [ "item6", "#" ] ]);
+  [ "item1", "#item1" ],
+  [ "item2", "#item2" ],
+  [ "cat1", "#cat1", null,
+    [ "item3", "#item3" ],
+    [ "item4", "#item4" ] ],
+  [ "cat2", "#cat2", null,
+    [ "item5", "#item5" ],
+    [ "item6", "#item6" ] ]);
 
 
 var usedLocales = ['en', 'ru'];

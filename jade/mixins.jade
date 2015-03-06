@@ -10,18 +10,20 @@ mixin _proxy(elementTag, id, attrs, level, hasSubmenu, attrsExtender, data, cont
   -  return res ? res : {};
   -}
   -var elemSel = id + "::attributes"
-  -var insertedAttrs = (data && data[elemSel]) ? data[elemSel] : {}
+  -var insertedAttrs = data[elemSel] ? data[elemSel] : {}
+  -var actualId = id;
+  -if(data["~prefix"]) actualId = data["~prefix"] + "-" + id;
   -if(content === false)
-    #{elementTag}(id=id)&attributes(attrs, extAttrs(), insertedAttrs)
+    #{elementTag}(id=actualId)&attributes(attrs, extAttrs(), insertedAttrs)
   -else if(content)
-    #{elementTag}(id=id)&attributes(attrs, extAttrs(), insertedAttrs) #{content}
+    #{elementTag}(id=actualId)&attributes(attrs, extAttrs(), insertedAttrs) #{content}
   -else
-    #{elementTag}(id=id)&attributes(attrs, extAttrs(), insertedAttrs)
+    #{elementTag}(id=actualId)&attributes(attrs, extAttrs(), insertedAttrs)
       block
 
 mixin _insertHelper(elem, data, suffix, position)
   -var elemSel = elem.id + suffix + position
-  -if(data && (elemSel in data))
+  -if(elemSel in data)
     -var insertData = data[elemSel]
     -if(insertData instanceof Array)
       -var name = insertData[0], args = insertData.slice(1)
@@ -60,7 +62,7 @@ mixin _menuRec(items, data, attrsExtender, level)
         +_AE(item, data, "--list")
 
 //- menu generation interface mixin
-mixin Menu(menuData, data, attrsExtender)
+mixin Menu(menuData, data, attrsExtender, pefixID)
   -function normalise(name) {
   -  if(name[0] === "@") {
   -    return menuData.id + name.slice(1);
@@ -70,8 +72,9 @@ mixin Menu(menuData, data, attrsExtender)
   -var nData = {}
   -for(var selector in data) {
   -  if(data.hasOwnProperty(selector)) {
-  -    nData[normalise(selector)] = data[selector]
+  -    nData[normalise(selector)] = data[selector];
   -  }
   -}
+  -if(pefixID) nData["~prefix"] = pefixID;
   +_proxy("ul", menuData.id, menuData.listAttrs, 0, true, attrsExtender, nData)
     +_menuRec(menuData, nData, attrsExtender, 0)
