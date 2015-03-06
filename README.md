@@ -83,6 +83,9 @@ user supplied `attrsExtender` function. It should return an
 - `level` - `int` menu nesting level, the first level is 0.
 - `hasSubmenu` - `bool` true if current item has submenu.
 
+IDs can be abbreviated with the help of `@` syntax, so selectors will
+look like _`@-FieldID-EntryID::Selector`_.
+
 
 
 
@@ -144,6 +147,8 @@ __Arguments:__
 - `jade` - `jade` library.
 - `options` - `jade` and render options __or__ `null`. Render options:
   - `attrsExtender` - `function` that extends HTML tags attributes.
+  - `prefixID` _optional_ - `string` with prefix that is added to all
+  IDs __or__ `null`.
 - `i18n` - `i18n` translation library.
 - `insertions` _optional_ - `object` with HTML insertions __or__
   `null`.
@@ -214,7 +219,7 @@ performs HTML rendering.
 # Jade API
 
 
-### Menu(data, insertions, attrsExtender)
+### Menu(data, insertions, attrsExtender, prefixID)
 
 _Mixin_
 
@@ -226,3 +231,5 @@ _Arguments:_
 - `insertions` _optional_ - `object` with HTML insertions data __or__ `null`.
 - `attrsExtender` _optional_ - `function` that extends HTML tags
   attributes. __or__ `null`.
+- `prefixID` _optional_ - `string` with prefix that is added to all
+  IDs __or__ `null`.

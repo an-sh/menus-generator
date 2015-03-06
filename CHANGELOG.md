@@ -1,4 +1,10 @@
 
+### v0.8.1 (2015/03/06)
+
+- Fix attrsExtender render option.
+- Allow @ usage as a form ID in insertions.
+- Allow additional prefix to all IDs.
+
 ### v0.8.0 (2015/03/05)
 
 - Render function arguments changed.
