@@ -21,15 +21,15 @@ block page
 
   //- Dynamic language menu styling based on locale value.
   -var insertions = {};
-  -var selected = "langMenu-en::attributes";
-  -if(locale === "ru") selected = "langMenu-ru::attributes"
+  -var selected = "@-en::attributes";
+  -if(locale === "ru") selected = "@-ru::attributes"
   -insertions[selected] = { "class" : "pure-menu-selected" };
 
   //- Add horizontal style to language menu.
-  -insertions["langMenu::attributes"] = { "class" : "pure-menu-horizontal" };
+  -insertions["@::attributes"] = { "class" : "pure-menu-horizontal" };
 
   +Menu(langMenu, insertions, pureIntegration)
 
   h2 #{__("Menu example")}
 
-  +Menu(exampleMenu, { "exampleMenu::attributes" : { "class" : "pure-menu-horizontal" } } , pureIntegration)
+  +Menu(exampleMenu, { "@::attributes" : { "class" : "pure-menu-horizontal" } } , pureIntegration)

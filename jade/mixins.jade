@@ -61,5 +61,17 @@ mixin _menuRec(items, data, attrsExtender, level)
 
 //- menu generation interface mixin
 mixin Menu(menuData, data, attrsExtender)
-  +_proxy("ul", menuData.id, menuData.listAttrs, 0, true, attrsExtender, data)
-    +_menuRec(menuData, data, attrsExtender, 0)
+  -function normalise(name) {
+  -  if(name[0] === "@") {
+  -    return menuData.id + name.slice(1);
+  -  }
+  -  return name;
+  -}
+  -var nData = {}
+  -for(var selector in data) {
+  -  if(data.hasOwnProperty(selector)) {
+  -    nData[normalise(selector)] = data[selector]
+  -  }
+  -}
+  +_proxy("ul", menuData.id, menuData.listAttrs, 0, true, attrsExtender, nData)
+    +_menuRec(menuData, nData, attrsExtender, 0)
