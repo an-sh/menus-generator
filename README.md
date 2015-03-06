@@ -199,7 +199,8 @@ Forces usage of unprefixed IDs for translation.
 
 __Arguments:__
 
-- `str` - `string` ID.
+- `id` - `string` matching `/^~?[a-zA-Z_][a-zA-Z0-9_]*$/` regular
+expression.
 
 __Returns:__
 
