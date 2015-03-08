@@ -75,8 +75,8 @@ arguments are supported). Or attribute objects for `::attributes`
 selector. Class attributes are concatenated, preserving classes
 defined in a menu constructor.
 
-Another way to insert attributes, based on tag/type combination, is a
-user supplied `attrsExtender` function. It should return an
+Another way to insert attributes, based on tag/nesting combinations,
+is a user supplied `attrsExtender` function. It should return an
 `attributes-object` and it recieves the following arguments:
 
 - `tag` - `string` HTML tag name.
@@ -84,7 +84,7 @@ user supplied `attrsExtender` function. It should return an
 - `hasSubmenu` - `bool` true if current item has submenu.
 
 IDs can be abbreviated with the help of `@` syntax, so selectors will
-look like _`@-FieldID-EntryID::Selector`_.
+look like _`@-ItemID::Selector`_.
 
 
 
