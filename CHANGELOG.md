@@ -1,4 +1,8 @@
 
+### v1.0.0 (2015/03/17)
+
+- Skip content cache options.
+
 ### v0.8.1 (2015/03/06)
 
 - Fix attrsExtender render option.
