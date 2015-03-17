@@ -121,7 +121,7 @@ expression, __or__ result of `nTP` function.
 - `...items` - Rest arguments are interpreted as items definitions.
 
 
-### Menu.getContent(i18n)
+### Menu.getContent(i18n, skipCache)
 
 _Method_ ___[caches results]___
 
@@ -130,6 +130,7 @@ Expands menu for `i18n` locale and caches results.
 __Arguments:__
 
 - `i18n` - `i18n` translation library.
+- `skipCache` _optional_ - Ignore the current cache and re-expand content.
 
 __Returns:__
 
@@ -147,8 +148,8 @@ __Arguments:__
 - `jade` - `jade` library.
 - `options` - `jade` and render options __or__ `null`. Render options:
   - `attrsExtender` - `function` that extends HTML tags attributes.
-  - `prefixID` _optional_ - `string` with prefix that is added to all
-  IDs __or__ `null`.
+  - `prefixID` - `string` with prefix that is added to all IDs.
+  - `skipCache` - Ignore the current cache and re-expand content.
 - `i18n` - `i18n` translation library.
 - `insertions` _optional_ - `object` with HTML insertions __or__
   `null`.
