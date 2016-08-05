@@ -1,6 +1,6 @@
 {
   "name": "menus-generator",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "HTML menus (ul based)",
   "author": {
     "name": "Andrey Sharapov",
@@ -27,10 +27,10 @@
   ],
   "devDependencies": {
     "vows": ">0.8.0",
-    "i18n": "~0.5.0",
+    "i18n": "~0.8.0",
     "jade": "^1.8.0",
-    "jsdom": "^2.0.0",
-    "dom-compare": "0.2.0"
+    "jsdom": "^3.0.0",
+    "dom-compare": "~0.2.0"
   },
   "license": "MIT"
 }

@@ -16,7 +16,7 @@ be rendered as a part of Jade template.
 ___Note:___ Neither `i18n` nor `jade` are included in the production
 dependencies, but rather they are expected by some methods as
 arguments. `Jade` should be compatible with version `1.9.0` and `i18n`
-with version `0.5.0`.
+with version `~0.5.0` or `~0.8.0`.
 
 ### Identifiers or IDs
 
